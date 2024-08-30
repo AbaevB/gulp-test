@@ -1,3 +1,41 @@
+html{
+  box-sizing: border-box;
+}
+*, *::before, *::after  {
+  box-sizing: inherit;
+}
 body {
-    background-color: #00ffff;
+  background-color: #00ffff;
+  font-family:  Helvetica, sans-serif;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 50;
+  max-width: 1200px;
+  min-width: 320px;
+}
+
+.hero {
+  padding-top: 94px;
+  padding-bottom: 96px;
+  background-color: royalblue;
+}
+
+.hero__title {
+  font-size: 80px;
+  font-weight: 400;
+  color: #ff0000;
+  text-align: center;
+}
+
+.hero__text {
+  font-size: 30px;
+  line-height: 120%;
+}
+
+.quote  {
+  font-size: 40px;
+  line-height: 180%;
+  font-style: italic;
 }

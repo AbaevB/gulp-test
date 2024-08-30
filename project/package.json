@@ -9,7 +9,10 @@
   "author": "me",
   "license": "ISC",
   "devDependencies": {
+    "browser-sync": "^3.0.2",
     "gulp": "^5.0.0",
+    "gulp-autoprefixer": "^7.0.0",
+    "gulp-clean-css": "^4.3.0",
     "gulp-cli": "^3.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-htmlmin": "^5.0.1"
