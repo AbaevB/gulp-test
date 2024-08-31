@@ -3,6 +3,7 @@ const concat = require('gulp-concat');
 const htmlMin = require('gulp-htmlmin');
 const autoprefixer = require('gulp-autoprefixer');
 const cleanCss = require('gulp-clean-css');
+const svgSprite = require('gulp-svg-sprite');
 const browserSync = require('browser-sync').create();
 
 
@@ -30,6 +31,19 @@ const htmlMinify =  () => {
 
 }
 
+const svgSprites = () => {
+    return src('src/img/svg/**/*.svg')
+        .pipe(svgSprite({
+            mode:{
+                stack:{
+                    sprite:'../sprite.svg'
+                }
+            }
+        }))
+        .pipe(dest('dist/img'))
+
+}
+
 const watchFiles = () => {
     browserSync.init({
        server:  {
@@ -40,7 +54,8 @@ const watchFiles = () => {
 
 watch('src/**/*.html', htmlMinify)
 watch('src/css/**/*.css', styles)
+watch('src/img/svg/**/*.svg', svgSprites)
 
 exports.styles = styles
 exports.htmlMinify = htmlMinify
-exports.default = series(htmlMinify, styles, watchFiles )
+exports.default = series(htmlMinify, styles, svgSprites, watchFiles )
